@@ -9,6 +9,7 @@ class DirectorListView(generics.ListCreateAPIView):
     serializer_class = DirectorSerializer
     filterset_fields = ["first_name", "last_name"]
 
+
 class DirectorDetailView(generics.RetrieveUpdateDestroyAPIView):
     queryset = Director.objects.all()
     serializer_class = DirectorSerializer
@@ -28,7 +29,13 @@ class ActorDetailView(generics.RetrieveUpdateDestroyAPIView):
 class MovieListView(generics.ListCreateAPIView):
     queryset = Movie.objects.prefetch_related("actors").select_related("director")
     serializer_class = MovieSerializer
-    filterset_fields = ["year", "actors__first_name", "actors__last_name", "director__first_name", "director__last_name",]
+    filterset_fields = [
+        "year",
+        "actors__first_name",
+        "actors__last_name",
+        "director__first_name",
+        "director__last_name",
+    ]
 
     def get_serializer_class(self):
         if self.request.method == "GET":
