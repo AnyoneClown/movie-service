@@ -19,8 +19,6 @@ def load_movies_data(movie_id: str) -> NoReturn:
     director_name = data.get("Director")
     actors_names = data.get("Actors").split(", ")
 
-    print(actors_names)
-
     director, _ = Director.objects.get_or_create(
         first_name=director_name.split()[0], last_name=director_name.split()[1]
     )
