@@ -157,7 +157,7 @@ INTERNAL_IPS = [
 ]
 
 SPECTACULAR_SETTINGS = {
-    "TITLE": "Social Media API",
+    "TITLE": "Movie Service API",
     "DESCRIPTION": "API for managing Movies, Actors and Directors",
     "VERSION": "1.0.0",
     "SERVE_INCLUDE_SCHEMA": False,
