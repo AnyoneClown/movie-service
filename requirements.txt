@@ -6,6 +6,8 @@ charset-normalizer==3.3.2
 click==8.1.7
 colorama==0.4.6
 Django==5.0.2
+django-debug-toolbar==4.3.0
+django-filter==23.5
 djangorestframework==3.14.0
 idna==3.6
 mypy-extensions==1.0.0
