@@ -31,7 +31,7 @@ SECRET_KEY = os.getenv("SECRET_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ["127.0.0.1"]
+ALLOWED_HOSTS = ["127.0.0.1", "movie-service-63ce.onrender.com"]
 
 
 # Application definition
@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     "rest_framework",
     "debug_toolbar",
     "django_filters",
+    "drf_spectacular",
     "movie",
 ]
 
@@ -86,11 +87,8 @@ WSGI_APPLICATION = "movie_service.wsgi.application"
 
 DATABASES = {
     "default": {
-        "ENGINE": "django.db.backends.postgresql",
-        "NAME": os.getenv("POSTGRES_DB"),
-        "USER": os.getenv("POSTGRES_USER"),
-        "PASSWORD": os.getenv("POSTGRES_PASSWORD"),
-        "HOST": os.getenv("POSTGRES_HOST"),
+        "ENGINE": "django.db.backends.sqlite3",
+        "NAME": os.path.join(BASE_DIR, "db.sqlite3"),
     }
 }
 
@@ -129,7 +127,9 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
-STATIC_URL = "static/"
+STATIC_URL = "/static/"
+
+STATIC_ROOT = "staticfiles/"
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
@@ -146,8 +146,16 @@ REST_FRAMEWORK = {
     "DEFAULT_FILTER_BACKENDS": ("django_filters.rest_framework.DjangoFilterBackend",),
     "DEFAULT_RENDERER_CLASSES": ("rest_framework.renderers.JSONRenderer",),
     "DEFAULT_PARSER_CLASSES": ("rest_framework.parsers.JSONParser",),
+    "DEFAULT_SCHEMA_CLASS": "drf_spectacular.openapi.AutoSchema",
 }
 
 INTERNAL_IPS = [
     "127.0.0.1",
 ]
+
+SPECTACULAR_SETTINGS = {
+    "TITLE": "Movie Service API",
+    "DESCRIPTION": "API for managing Movies, Actors and Directors",
+    "VERSION": "1.0.0",
+    "SERVE_INCLUDE_SCHEMA": False,
+}
