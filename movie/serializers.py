@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import Director, Actor, Movie
+from movie.models import Director, Actor, Movie
 
 
 class DirectorSerializer(serializers.ModelSerializer):

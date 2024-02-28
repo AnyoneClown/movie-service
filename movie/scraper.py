@@ -1,10 +1,11 @@
-from typing import NoReturn
-
 import requests
+
+from typing import NoReturn
 from bs4 import BeautifulSoup
 
 from movie.models import Movie, Director, Actor
 from movie_service.settings import IMDB_API_URL, API_KEY
+
 
 IMDB_MOVIE_URL = "https://www.imdb.com/chart/top/?ref_=nv_mv_250"
 
