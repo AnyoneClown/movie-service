@@ -20,7 +20,7 @@ class Actor(models.Model):
 class Movie(models.Model):
     title = models.CharField(max_length=100)
     year = models.IntegerField()
-    director = models.ForeignKey(Director, on_delete=models.CASCADE, related_name="movies")
+    director = models.ForeignKey(Director, on_delete=models.SET_NULL, related_name="movies", null=True)
     actors = models.ManyToManyField(Actor, related_name="movies")
 
     def __str__(self) -> str:

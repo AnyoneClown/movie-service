@@ -4,7 +4,7 @@ from rest_framework import status
 from rest_framework.test import APIClient
 
 from movie.models import Movie, Director
-from movie.serializers import MovieSerializer, MovieDetailSerializer
+from movie.serializers import MovieDetailSerializer
 
 
 class TestMovieViews(TestCase):
