@@ -37,3 +37,7 @@ Create a `.env` file in the root of your project and define the necessary variab
     ```bash
     python manage.py runserver
     ```
+   
+## API Endpoints Overview
+![Swagger1](images/Swagger1.png)
+![Swagger2](images/Swagger2.png)
