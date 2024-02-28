@@ -5,6 +5,7 @@ from rest_framework import status
 from movie.models import Director
 from movie.serializers import DirectorSerializer
 
+
 class TestDirectorViews(TestCase):
     def setUp(self):
         self.client = APIClient()
