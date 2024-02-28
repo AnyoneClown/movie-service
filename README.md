@@ -1,5 +1,5 @@
 ## Deployed Website
-Explore the deployed Task Manager web application on [Render](https://movie-service-63ce.onrender.com/api/schema/swagger/)! Happy task managing!
+Explore the deployed project on [Render](https://movie-service-63ce.onrender.com/api/schema/swagger/)!
 
 
 ## Getting Started
@@ -9,7 +9,7 @@ Create a `.env` file in the root of your project and define the necessary variab
 
 1. **Clone the Repository:**
     ```bash
-    git clone https://github.com/AnyoneClown/Airport-API-Service.git
+    git clone https://github.com/AnyoneClown/movie-service.git
     ```
 
 2. **Create venv:**
