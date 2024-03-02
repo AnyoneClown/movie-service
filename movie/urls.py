@@ -7,6 +7,6 @@ router.register("movies", MovieViewSet)
 router.register("directors", DirectorViewSet)
 router.register("actors", ActorViewSet)
 
-urlpatterns = [] + router.urls
+urlpatterns = router.urls
 
 app_name = "movies"
