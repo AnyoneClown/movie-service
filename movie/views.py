@@ -1,4 +1,4 @@
-from rest_framework import generics, viewsets
+from rest_framework import viewsets
 
 from movie.models import Director, Actor, Movie
 from movie.serializers import DirectorSerializer, ActorSerializer, MovieSerializer, MovieDetailSerializer
